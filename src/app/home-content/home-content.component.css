@@ -1,0 +1,16 @@
+.home{
+    min-height: 90vh;
+}
+img{
+    height: 60vh;
+    object-fit: cover;
+}
+.card-deck{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+.card-img-top{
+    height: 20vh;
+}

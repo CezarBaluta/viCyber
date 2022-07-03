@@ -1,0 +1,12 @@
+img{
+    max-height: 5vw;
+    min-width: 50px;
+    min-height: 50px;
+
+}
+nav{
+    background-color: #88aa54;
+}
+.nav-l{
+    margin: 0 2vw  ;
+}
