@@ -1,11 +1,38 @@
-img{
-    max-height: 5vw;
-    min-width: 50px;
-    min-height: 50px;
+.navbar-img{
+    width: 100px;
+}
+.navbar-text{
+    font-size: 1.5rem;
+    text-decoration: none;
+}
 
+a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+.gameloft{
+    max-height: 5vh;
+}
+@media only screen and (max-width: 438px) {
+    .emerson{
+        margin:auto;
+    }
+}
+@media only screen and (max-width: 620px) {
+    .navbar-text{
+        width: 100%;
+        text-align: center;
+    }
+    .allign{
+        margin: auto;
+    }
+}
+.logos{
+    width: 100%;
 }
 nav{
     background-color: #88aa54;
+    height: max-content;
 }
 .nav-l{
     margin: 0 2vw  ;
