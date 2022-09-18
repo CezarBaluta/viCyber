@@ -1,0 +1,11 @@
+{
+    "/api/*":{
+        "target":"https://vi-cyber-api.vercel.app/",
+        "pathRewrite":{
+            "^/api":"/api"
+        },
+        "changeOrigin": true,
+        "secure": true
+
+    }
+}
