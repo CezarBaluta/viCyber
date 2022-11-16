@@ -1,28 +1,35 @@
 
-<nav class="navbar navbar-light justify-content-between">
-    <a class="navbar-brand"   routerLink="">
-        <img class="navbar-img" src="assets/images/vicyber.png" alt="">
+<nav class="navbar navbar-custom justify-content-between">
+  <a class="navbar-brand"   routerLink="">
+    <img id="logo" class="navbar-img" src="assets/images/vicyber.png" alt="">
+</a>
+  <div class="navbar-text">
+    <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" (click)="hideMenu()"></i>
+        <ul>
+          <li><a class="nav-l"  routerLink="" (click)="hideMenu()"> Home</a></li>
+          <li>
+            <a class="nav-l"  routerLink="news" (click)="hideMenu()"> News</a>
+          </li>
+          <li>
+            <a class="nav-l"  routerLink="contact" (click)="hideMenu()"> Contact</a>
+          </li>
+        </ul>
+      </div>
+</div>
+  <div class="sponsorsBox">
+    <a id="gameloft" class="navbar-brand sponsors"  href="http://www.gameloft.ro/">
+      <img class="" src="assets/images/logo_gameloft_black.png" alt="">
     </a>
-    <a class="navbar-brand sponsors"  href="http://www.gameloft.ro/">
-        <img class="" src="assets/images/logo_gameloft_black.png" alt="">
+      <a class="navbar-brand sponsors"  href="https://www.emerson.com">
+      <img class="navbar-img" src="assets/images/emerson standard-01.png" alt="">
     </a>
-        <a class="navbar-brand sponsors"  href="https://www.emerson.com">
-        <img class="navbar-img" src="assets/images/emerson standard-01.png" alt="">
-    </a>
+  <a  class="navbar-brand sponsors"  href="https://www.emerson.com">
+    <img id="biochem" class="navbar-img" src="assets/images/Biochem-logo.png" alt="">
+  </a>
+  </div>
+  
+    <i class="fa fa-bars" (click)="showMenu()"></i>
 
-    <div class="navbar-text">
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" (click)="hideMenu()"></i>
-            <ul>
-              <li><a class="nav-l"  routerLink="" (click)="hideMenu()"> Home</a></li>
-              <li>
-                <a class="nav-l"  routerLink="news" (click)="hideMenu()"> News</a>
-              </li>
-              <li>
-                <a class="nav-l"  routerLink="contact" (click)="hideMenu()"> Contact</a>
-              </li>
-            </ul>
-          </div>
-          <i class="fa fa-bars" (click)="showMenu()"></i>
-    </div>
+    
 </nav>

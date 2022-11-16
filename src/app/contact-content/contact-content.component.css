@@ -1,7 +1,4 @@
-#footer {
-    height: 70vh;
-    margin-top: 40vh;
-}
+
 
 input {
     background-color: transparent;
@@ -19,23 +16,22 @@ input {
     letter-spacing: 2px;
     font-size: 50px;
     margin-bottom: 10%;
-    color: #88aa54;
 }
 
 /* /////////////////////////////////////////// */
 
 .contact-info {
-    background-color:rgba(136, 170, 84, 1);
+    background-color:rgba(255, 255, 255, 0);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    margin-top: 20vh;
-    height: 45vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: #f1f1f1;
 }
 
 .contact-info h3 {

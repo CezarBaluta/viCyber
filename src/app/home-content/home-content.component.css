@@ -1,10 +1,11 @@
+html{
+    scroll-behavior: smooth;
+}
 .home{
-    min-height: 90vh;
+    padding-top:15vh ;
+    min-height: 100vh;  
 }
-img{
-    height: 60vh;
-    object-fit: cover;
-}
+
 .card-deck{
     margin-left: 20px;
     margin-right: 20px;
@@ -16,4 +17,180 @@ img{
 }
 .carouselText{
     background-color: rgba(0, 0, 0, 0.4);
+}
+.coll-img{
+    max-width: 45vw;
+    object-fit: cover;
+}
+.coll{
+    width: 45vw;
+    object-fit: cover;
+    display: inline-block;
+
+}
+.roww{
+    display: flex;
+    width: 90vw;
+    display: flex;
+    margin: auto;
+}
+.roww p{
+color: #eff2ee;
+}
+
+
+.content{
+    width: 100%;
+    margin: 0;
+    height: 85vh;
+    display: flex;
+
+}
+h5{
+    text-align: right;
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+}
+h4{
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    letter-spacing: 0.6rem;
+}
+.allignRight{
+    text-align: right;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.paragraph{
+    width: 100%;
+    display: flex;
+    height: 20vh;
+}
+
+.centeredImg{
+    margin: auto;
+}
+
+
+
+.allign{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+.allignParent{
+    display: flex;
+}
+#p1{
+    text-align: center;
+    vertical-align: center;
+    display: flex;
+    height: fit-content;
+
+    margin: auto;
+}
+
+
+#img1{
+    height: 40vh;
+}
+#img2{
+    object-fit: cover;
+    height: 60vh;
+    display: flex;
+    margin: auto;
+    
+}
+
+.sourceImg{
+    height: 30px;
+    width: auto;
+}
+
+.carousel-item{
+    height: 70%;
+    object-fit: cover;
+}
+.carousel-item > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.big-text{
+    font-size: 1.5rem;
+}
+
+.title h5{
+    text-align: left;
+    font-size: 7rem;
+}
+
+.membersTitle{
+    color: black;
+    padding: 0;
+    margin: auto;
+}
+
+.carousel-caption2{
+    position: relative;
+    right: 0;
+    left:0;
+    bottom: 0;
+    padding-bottom: 0;
+    padding-top: 1.25rem;
+}
+
+.membersCarousel{
+    max-height: 70vh;
+}
+ 
+
+.ourTeam{
+    height: fit-content;
+    margin: auto;
+}
+
+/*membersCarousel*/
+#recipeCarousel{
+    max-width: 40vw;
+}
+
+@media only screen and (max-width: 1200px) {
+    #p1{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    #img2{
+        display: none;
+    }
+    .col2{
+        display: none;
+    }
+    .coll{
+        width: 100%;
+    }
+    .coll-img{
+        width: 100%;
+        height: auto;
+    }
+    #img1{
+        height: auto;
+        margin: auto;
+        width: 80%;
+        max-width: 80%;
+        display: flex;
+        max-height: 60vh;
+    }
+
+    .imageHolder{
+        width: 100%;
+        display: flex;
+    }
+    
 }

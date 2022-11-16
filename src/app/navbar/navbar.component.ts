@@ -25,9 +25,7 @@ export class NavbarComponent implements OnInit {
     var logo = document.getElementsByClassName("sponsors")[0];
     logo.classList.add('mobile-sponsors');
     console.log(logo.classList);
-    setTimeout(() => this.showLogo2(),3000)
-    
-    
+    setTimeout(() => this.showLogo2(),3000) 
   }
    showLogo2(){
     document.getElementsByClassName("sponsors")[0].classList.remove('mobile-sponsors');
