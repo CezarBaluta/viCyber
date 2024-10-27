@@ -11,7 +11,7 @@ nav{
 
 
 .navbar-img{
-    width: 100px;
+    width: 15vh;
 }
 .navbar-text{
     font-size: 1.5rem;
@@ -19,7 +19,7 @@ nav{
 }
 nav .fa {
     display: none;
-    
+
 }
 
 a:hover{
@@ -96,11 +96,10 @@ a:hover{
 }
 nav{
     background-color: rgba(1, 1, 1, 0);
-    height: 15vh;
 }
-.nav-l{
+/* .nav-l{
     margin: 0 2vw  ;
-}
+} */
 
 #gameloft{
     filter: invert(1);
@@ -115,6 +114,7 @@ nav{
     margin-left: 3vw;
 }
 
+/*  */
 .nav-links ul li {
     list-style: none;
     display: inline-block;
