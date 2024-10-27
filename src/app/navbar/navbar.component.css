@@ -11,7 +11,7 @@ nav{
 
 
 .navbar-img{
-    width: 15vh;
+    width: 20vh;
 }
 .navbar-text{
     font-size: 1.5rem;
@@ -118,7 +118,7 @@ nav{
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 13px 13px;
+    padding: 2vh 2vw;
     position: relative;
 }
 
