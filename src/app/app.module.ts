@@ -10,12 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactContentComponent } from './contact-content/contact-content.component';
-import { NewsPageComponent } from './news-page/news-page.component';
-
 const appRoutes: Routes = [
   {path:'', component:HomeContentComponent},
-  {path:'contact', component:ContactContentComponent},
-  {path:'news', component:NewsPageComponent},
+  {path:'contact', component:ContactContentComponent}
 ];
 
 @NgModule({
@@ -24,8 +21,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeContentComponent,
     FooterComponent,
-    ContactContentComponent,
-    NewsPageComponent
+    ContactContentComponent
   ],
   imports: [
     BrowserModule,

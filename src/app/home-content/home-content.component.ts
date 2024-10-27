@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 @Component({
   selector: 'app-home-content',
@@ -12,27 +12,27 @@ export class HomeContentComponent implements OnInit {
 
   
   ngOnInit(): void {
-    $('#recipeCarousel').carousel({
-      interval: 10000
-    })
+    // $('#recipeCarousel').carousel({
+    //   interval: 10000
+    // })
     
-    $('.carousel .carousel-item').each(function(){
-        var minPerSlide = 3;
-        var next = $(this).next();
-        if (!next.length) {
-        next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
+    // $('.carousel .carousel-item').each(function(){
+    //     var minPerSlide = 3;
+    //     var next = $(this).next();
+    //     if (!next.length) {
+    //     next = $(this).siblings(':first');
+    //     }
+    //     next.children(':first-child').clone().appendTo($(this));
         
-        for (var i=0;i<minPerSlide;i++) {
-            next=next.next();
-            if (!next.length) {
-              next = $(this).siblings(':first');
-            }
+    //     for (var i=0;i<minPerSlide;i++) {
+    //         next=next.next();
+    //         if (!next.length) {
+    //           next = $(this).siblings(':first');
+    //         }
             
-            next.children(':first-child').clone().appendTo($(this));
-          }
-    });
+    //         next.children(':first-child').clone().appendTo($(this));
+    //       }
+    // });
   }
 
 }

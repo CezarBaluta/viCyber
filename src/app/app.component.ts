@@ -14,16 +14,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.getNewsFromAPI();
+    // this.getNewsFromAPI();
   }
 
-  getNewsFromAPI(){
-    this.service.getNews().subscribe((response)=>{
-      console.log(response);
+  // getNewsFromAPI(){
+  //   this.service.getNews().subscribe((response)=>{
+  //     console.log(response);
       
-    },(error) =>{
-      console.log(error);
-      }
-    );
-  }
+  //   },(error) =>{
+  //     console.log(error);
+  //     }
+  //   );
+  // }
 }
