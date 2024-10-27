@@ -1,6 +1,6 @@
 nav{
     display: flex;
-    position: fixed;
+    /* position: fixed; Wow. De asta se suprapunea headerul cu contentul paginilor */
     width: 100%;
     z-index: 20;
 }

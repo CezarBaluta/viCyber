@@ -10,9 +10,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactContentComponent } from './contact-content/contact-content.component';
+import { HistoryComponent } from './history/history.component';
 const appRoutes: Routes = [
   {path:'', component:HomeContentComponent},
-  {path:'contact', component:ContactContentComponent}
+  {path:'contact', component:ContactContentComponent},
+  {path:'history', component:HistoryComponent}
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeContentComponent,
     FooterComponent,
-    ContactContentComponent
+    ContactContentComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

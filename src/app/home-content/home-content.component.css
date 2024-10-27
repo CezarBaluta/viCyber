@@ -1,7 +1,42 @@
 html{
     scroll-behavior: smooth;
 }
-.home{
+
+.title{
+    text-align: center;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+.content{
+    margin-top: 10rem;
+}
+
+.p-text{
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.img{
+    margin-top: 5rem;
+    margin-left: 30%;
+    margin-bottom: 5rem;
+    width: 40%;
+}
+
+.imagini-side-by-side{
+    margin-top: 5rem;
+}
+
+.team-image{
+    margin-left: 20%;
+    width: 20%; 
+}
+
+/* .home{
     padding-top:15vh ;
     min-height: 100vh;  
 }
@@ -156,7 +191,10 @@ h4{
     margin: auto;
 }
 
+*/
+
 /*membersCarousel*/
+/*
 #recipeCarousel{
     max-width: 40vw;
 }
@@ -194,3 +232,5 @@ h4{
     }
     
 }
+
+*/
