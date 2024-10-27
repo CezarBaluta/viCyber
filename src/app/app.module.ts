@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http'
-import { HttpModule } from "@angular/http";
 import { Routes , RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
@@ -11,10 +9,12 @@ import { HomeContentComponent } from './home-content/home-content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactContentComponent } from './contact-content/contact-content.component';
 import { HistoryComponent } from './history/history.component';
+import { SponsoriComponent } from './sponsori/sponsori.component';
 const appRoutes: Routes = [
   {path:'', component:HomeContentComponent},
   {path:'contact', component:ContactContentComponent},
-  {path:'history', component:HistoryComponent}
+  {path:'history', component:HistoryComponent},
+  {path:'sponsori', component:SponsoriComponent}
 ];
 
 @NgModule({
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     HomeContentComponent,
     FooterComponent,
     ContactContentComponent,
-    HistoryComponent
+    HistoryComponent,
+    SponsoriComponent
   ],
   imports: [
     BrowserModule,
