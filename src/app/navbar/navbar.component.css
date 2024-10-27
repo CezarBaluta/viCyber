@@ -27,8 +27,8 @@ a:hover{
     color: #ffffff;
 }
 
-/* @media only screen and (max-width: 1360px) {
-    */
+@media only screen and (max-width: 1360px) {
+    
     .mobile-sponsors{
         margin: auto;
         display: none;
@@ -87,7 +87,7 @@ a:hover{
         margin: auto;
     }
     
-/* } */
+}
 .logos{
     width: 100%;
 }
