@@ -6,22 +6,27 @@ p{
     color: white;
 }
 
-.title{
+/* .title{
     font-size: 10vh;
-    text-align: center;
+    text-align: center; 
     color: greenyellow;
     margin-bottom: 2.5vh;
-}
+} */
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .text{
         width: 95% !important;
     }
-}
+} */
   
+img{
+    width: 100%;
+    margin-bottom: 10vh;
+}
+
 .text{
     margin-left: 2.5%;
-    width: 72.5%;
+    width: 95%;
     text-align: center;
     color: greenyellow;
     font-size: 1.2rem;

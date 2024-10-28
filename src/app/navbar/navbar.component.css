@@ -1,3 +1,18 @@
+.translate-button{
+    width: 20%;
+    background-color: rgb(62, 62, 62);
+    color: yellowgreen;
+    border-radius: 1vh;
+    height: 7vh;
+    font-size: 3vh;
+    border-color: yellowgreen;
+    transition: 0.4s;
+}
+
+.translate-button:hover{
+    background-color: rgb(140, 140, 140);
+}
+
 nav{
     display: flex;
     /* position: fixed; Wow. De asta se suprapunea headerul cu contentul paginilor */
