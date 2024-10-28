@@ -1,3 +1,15 @@
+.title{
+    margin-left: -25%;
+    width: 20%;
+    color: yellowgreen;
+}
+
+@media (max-width: 600px){
+    .title{
+        margin-left: -10% !important;
+    }
+}
+
 .translate-button{
     width: 20%;
     background-color: rgb(62, 62, 62);
