@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiKey = 'vicyberthebest'
+  private apiKey = ''
 
   constructor(private http: HttpClient) { }
   
