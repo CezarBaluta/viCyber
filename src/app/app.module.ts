@@ -10,11 +10,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactContentComponent } from './contact-content/contact-content.component';
 import { HistoryComponent } from './history/history.component';
 import { SponsoriComponent } from './sponsori/sponsori.component';
+import { NewsComponent } from './news/news.component';
 const appRoutes: Routes = [
   {path:'', component:HomeContentComponent},
   {path:'contact', component:ContactContentComponent},
   {path:'history', component:HistoryComponent},
-  {path:'sponsori', component:SponsoriComponent}
+  {path:'sponsori', component:SponsoriComponent},
+  {path:'news', component:NewsComponent}
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     FooterComponent,
     ContactContentComponent,
     HistoryComponent,
-    SponsoriComponent
+    SponsoriComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
