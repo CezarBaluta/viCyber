@@ -1,17 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private apiKey = ''
+  private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
 
   constructor(private http: HttpClient) { }
   
-  private getHeaders(): HttpHeaders {
+  private getHeadersRead(): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+  }
+
+  private getHeadersWrite(): HttpHeaders {
     return new HttpHeaders({
       'Authorization': this.apiKey,
       'Content-Type': 'application/json'
@@ -19,10 +25,10 @@ export class ApiService {
   }
 
   getData(endpoint: string): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/${endpoint}`, { headers: this.getHeaders() })
+    return this.http.get(`${this.apiUrl}/${endpoint}`, { headers: this.getHeadersRead() })
   }
 
   postData(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/${endpoint}`, data, { headers: this.getHeaders() });
+    return this.http.post(`${this.apiUrl}/${endpoint}`, data, { headers: this.getHeadersWrite() });
   }
 }
