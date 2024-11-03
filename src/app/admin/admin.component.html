@@ -1,0 +1,19 @@
+<form (ngSubmit)="submitPost()" class="form">
+    <h1 class="form-title">Post an article</h1>
+    <h2 class="form-attribute">Title</h2>
+    <textarea class="form-textarea" rows="1" [(ngModel)]="title" name="title" required></textarea>
+    <h2 class="form-attribute">Content</h2>
+    <textarea class="form-textarea" rows="7" [(ngModel)]="content" name="content" required></textarea>
+    <h2 class="form-attribute">ViCyber admin password</h2>
+    <textarea class="form-textarea" rows="1" [(ngModel)]="passwordPost" name="password" required></textarea>
+    <button class="form-submit" (click)="submitPost()">Submit</button>
+</form>
+
+<form (ngSubmit)="submitDelete()" class="form">
+    <h1 class="form-title">Delete an article</h1>
+    <h2 class="form-attribute">Id</h2>
+    <textarea class="form-textarea" rows="1" [(ngModel)]="id" name="id" required></textarea>
+    <h2 class="form-attribute">ViCyber admin password</h2>
+    <textarea class="form-textarea" rows="1" [(ngModel)]="passwordDelete" name="password" required></textarea>
+    <button class="form-submit" (click)="submitDelete()">Submit</button>
+</form>

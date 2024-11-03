@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiKey = ''
+  public apiKey = ''
   private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
 
   constructor(private http: HttpClient) { }
@@ -24,11 +24,15 @@ export class ApiService {
     });
   }
 
-  getData(endpoint: string): Observable<any> {
+  getArticle(endpoint: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${endpoint}`, { headers: this.getHeadersRead() })
   }
 
-  postData(endpoint: string, data: any): Observable<any> {
+  postArticle(endpoint: string, data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/${endpoint}`, data, { headers: this.getHeadersWrite() });
+  }
+
+  deleteArticle(endpoint: string, id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${endpoint}/${id}`, { headers: this.getHeadersWrite() })
   }
 }

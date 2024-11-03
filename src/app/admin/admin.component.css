@@ -1,0 +1,44 @@
+.form{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: black;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 1vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    text-align: center;
+}
+
+.form-title{
+    color: yellowgreen;
+    font-size: 3.5vh;
+}
+
+.form-attribute{
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.form-textarea{
+    border-radius: 1vh;
+    width: 90%;
+    font-size: 3vh;
+}
+
+.form-submit{
+    margin-top: 2vh;
+    width: 30vh;
+    border-radius: 1vh;
+    background-color: black;
+    color: yellowgreen;
+    font-size: 3vh;
+    border-color: yellowgreen;
+    transition: 300ms;
+}
+
+.form-submit:hover{
+    background-color: yellowgreen;
+    color: white;
+}

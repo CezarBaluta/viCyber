@@ -23,3 +23,11 @@
     padding-left: 5%;
     padding-right: 5%;
 }
+
+.article-id{
+    color: grey;
+    font-size: 2vh;
+    text-align: right;
+    padding-right: 2%;
+    padding-bottom: 2vh;
+}

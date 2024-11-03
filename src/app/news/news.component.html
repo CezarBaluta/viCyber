@@ -1,1 +1,7 @@
-<div id="root-article-div"></div>
+<div id="root-article-div">
+    <div *ngFor="let article of articleArray" class="article-div">
+        <h2 class="article-title">{{ article.Title }}</h2>
+        <p class="article-content">{{ article.Content }}</p>
+        <p class="article-id">id: {{ article.ID }}</p>
+    </div>
+</div>
