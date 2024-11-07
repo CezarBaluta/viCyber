@@ -1,13 +1,30 @@
 .form{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    background-color: black;
+    background-color: rgb(51, 51, 51);
     width: 90%;
     margin-left: 5%;
     border-radius: 1vh;
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;
     text-align: center;
+}
+
+.input{
+    background-color: black;
+    color: yellowgreen;
+    border: 0.15rem solid yellowgreen;
+    width: 20%;
+    margin-right: 35%;
+    margin-left: 35%;
+    border-radius: 1vh;
+    font-size: 3vh;
+    transition: 300ms;
+}
+
+.input:hover{
+    background-color: yellowgreen;
+    color: white;
 }
 
 .form-title{
@@ -29,7 +46,7 @@
 
 .form-submit{
     margin-top: 2vh;
-    width: 30vh;
+    width: 20%;
     border-radius: 1vh;
     background-color: black;
     color: yellowgreen;

@@ -2,6 +2,12 @@
     <h1 class="form-title">Post an article</h1>
     <h2 class="form-attribute">Title</h2>
     <textarea class="form-textarea" rows="1" [(ngModel)]="title" name="title" required></textarea>
+    
+    <h2 class="form-attribute">Image</h2>
+    <input style="display: none;" id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*"/>
+    <label for="fileInput" class="input">Upload Image</label>
+    <img *ngIf="imagePreview" [src]="imagePreview" alt="Image preview" />
+    
     <h2 class="form-attribute">Content</h2>
     <textarea class="form-textarea" rows="7" [(ngModel)]="content" name="content" required></textarea>
     <h2 class="form-attribute">ViCyber admin password</h2>

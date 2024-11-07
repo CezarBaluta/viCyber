@@ -35,4 +35,8 @@ export class ApiService {
   deleteArticle(endpoint: string, id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${endpoint}/${id}`, { headers: this.getHeadersWrite() })
   }
+
+  postImage(endpoint: string, data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${endpoint}`, data, { headers: this.getHeadersWrite() });
+  }
 }
