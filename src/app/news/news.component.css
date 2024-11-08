@@ -7,9 +7,15 @@
     border-radius: 1vh;
 }
 
+.article-image{
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 1vh;
+}
+
 .article-title{
     color: yellowgreen;
-    font-size: 5vh;
+    font-size: 7vh;
     text-align: center;
     padding-top: 3vh;
 }
@@ -17,7 +23,7 @@
 .article-content{
     color: white;
     text-align: justify;
-    font-size: 2vh;
+    font-size: 3vh;
     padding-top: 3vh;
     padding-bottom: 3vh;
     padding-left: 5%;
