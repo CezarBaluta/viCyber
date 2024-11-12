@@ -1,7 +1,7 @@
 <div id="root-article-div">
     <div *ngFor="let article of articleArray" class="article-div">
         <h2 class="article-title" [innerHTML]="article.Title"></h2>
-        <img *ngIf="article.imageUrl" [src]="article.imageUrl" alt="Article Image" class="article-image"/>
+        <img *ngIf="article.imageUrl" [src]="article.imageUrl" [style.width.%]="article.imageWidth" [style.margin-left.%]="article.marginLeft" class="article-image"/>
         <p class="article-content" [innerHTML]="article.Content"></p>
         <p class="article-id">id: {{ article.ID }}</p>
     </div>

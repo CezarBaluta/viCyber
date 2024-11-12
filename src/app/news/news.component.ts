@@ -26,6 +26,14 @@ export class NewsComponent implements OnInit {
                 const imageResponse = await this.apiService.getImage(`image/${article.ImageID}`).toPromise();
                 // Assign the base64 image data directly
                 article.imageUrl = `data:image/jpeg;base64,${imageResponse.data}`; // or the correct mime type
+
+                article.imageWidth = 80
+                article.marginLeft = 10
+                if(imageResponse.width != 0){
+                  article.imageWidth = imageResponse.width
+                  article.marginLeft = (100 - imageResponse.width) / 2
+                  console.log(article.marginLeft)
+                }
               } catch (error) {
                 console.error('Error loading image:', error);
               }
