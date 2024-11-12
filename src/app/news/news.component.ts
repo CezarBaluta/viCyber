@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ApiService } from '../api.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-news',
@@ -10,7 +12,7 @@ import { ApiService } from '../api.service';
 export class NewsComponent implements OnInit {
   articleArray: Array<any> = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.apiService.getArticle('article').subscribe({
@@ -28,6 +30,8 @@ export class NewsComponent implements OnInit {
                 console.error('Error loading image:', error);
               }
             }
+            article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
+            article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
             return article;
           })
         );
