@@ -10,7 +10,8 @@ export class AdminComponent implements OnInit {
   // post article
   title: string
   imageid: number = -1
-  imagePreview: string | ArrayBuffer | null = null;
+  imagePreview: string | ArrayBuffer | null = null
+  imageWidth: number = 80
   selectedImage: File | null = null;
   content: string
   passwordPost: string
@@ -25,6 +26,7 @@ export class AdminComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    console.log(this.imageWidth)
   }
 
   onFileSelected(event: Event): void {
@@ -50,7 +52,7 @@ export class AdminComponent implements OnInit {
           const base64Img = reader.result as string;
           const base64Data = base64Img.split(',')[1];
   
-          this.apiService.postImage('image', { data: base64Data }).subscribe({
+          this.apiService.postImage('image', { data: base64Data, width: this.imageWidth }).subscribe({
             next: (response) => {
               console.log('Image posted successfully:', response);
               this.imageid = response.ID; // Assuming response.ID is the image ID
