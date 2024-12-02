@@ -2,7 +2,7 @@
     <div *ngFor="let article of articleArray" class="article-div">
         <h2 class="article-title" [innerHTML]="article.Title"></h2>
         <img *ngIf="article.imageUrl" [src]="article.imageUrl" [style.width.%]="article.imageWidth" [style.margin-left.%]="article.marginLeft" class="article-image"/>
-        <iframe *ngIf="article.VideoURL" width="560" height="315" [src]="article.VideoURL" frameborder="0" allowfullscreen></iframe>
+        <iframe *ngIf="article.VideoURL" [src]="article.VideoURL" [style.width.%]="article.videowidth" [style.margin-left.%]="article.videoMarginLeft" [style.height.vh]="article.videoHeight" class="article-image"></iframe>
         <p class="article-content" [innerHTML]="article.Content"></p>
         <p class="article-id">id: {{ article.ID }}</p>
     </div>

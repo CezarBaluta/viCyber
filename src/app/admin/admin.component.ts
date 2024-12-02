@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   imageWidth: number = 80
   selectedImage: File | null = null;
   videoURL: string | null = null;
+  videoWidth: number = 80
   content: string
   passwordPost: string
 
@@ -91,6 +92,7 @@ export class AdminComponent implements OnInit {
         title: this.title,
         imageid: imageId,
         videourl: this.videoURL,
+        videowidth: this.videoWidth,
         content: this.content
       };
   
@@ -100,6 +102,7 @@ export class AdminComponent implements OnInit {
           console.log('Article posted successfully:', response);
           this.title = '';
           this.content = '';
+          this.videoURL = '';
           this.passwordPost = '';
         },
         error: (error) => {

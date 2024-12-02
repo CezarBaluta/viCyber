@@ -12,6 +12,8 @@
 
     <h2 class="form-attribute">Video</h2>
     <textarea class="form-textarea" rows="1" [(ngModel)]="videoURL" name="videoURL"></textarea>
+    <h2 class="form-attribute">Video Width</h2>
+    <input class="imgWidthSlider" type="range" min="0" max="100" name="videoWidth" [(ngModel)]="videoWidth" />
     
     <h2 class="form-attribute">Content</h2>
     <textarea class="form-textarea" rows="7" [(ngModel)]="content" name="content" required></textarea>

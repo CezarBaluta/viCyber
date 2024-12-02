@@ -40,7 +40,23 @@ export class NewsComponent implements OnInit {
             }
             article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
             article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
-            article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
+            if (article.VideoURL) {
+              article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
+
+              if(article.videowidth != 0){
+                article.videoMarginLeft = (100 - article.videoMarginLeft) / 2
+                console.log(article.videoMarginLeft)
+              } else {
+                article.videowidth = 80
+                article.videoMarginLeft = 10
+              }
+
+              // x / [absolute videowidth] = 16 / 9
+              article.videoHeight = 16 * (article.videowidth - 2 * (10 + article.videoMarginLeft)) / 9
+              console.log(article.videowidth, article.videoHeight)
+            } else {
+              delete article.VideoURL; // Remove VideoURL if empty
+            }
             return article;
           })
         );
