@@ -9,6 +9,9 @@
     <img [style.width.%]="imageWidth" *ngIf="imagePreview" [src]="imagePreview" alt="Image preview" />
     <h2 class="form-attribute">Image Width</h2>
     <input class="imgWidthSlider" type="range" min="0" max="100" name="imageWidth" [(ngModel)]="imageWidth" />
+
+    <h2 class="form-attribute">Video</h2>
+    <textarea class="form-textarea" rows="1" [(ngModel)]="videoURL" name="videoURL"></textarea>
     
     <h2 class="form-attribute">Content</h2>
     <textarea class="form-textarea" rows="7" [(ngModel)]="content" name="content" required></textarea>

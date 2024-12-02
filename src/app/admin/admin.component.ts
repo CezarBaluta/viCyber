@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   imagePreview: string | ArrayBuffer | null = null
   imageWidth: number = 80
   selectedImage: File | null = null;
+  videoURL: string | null = null;
   content: string
   passwordPost: string
 
@@ -82,15 +83,14 @@ export class AdminComponent implements OnInit {
       // Set the API key
       this.apiService.apiKey = this.passwordPost;
   
-      // Upload the image and wait for the image ID
+      // Upload the image and wait for the image ID, if any
       let imageId = await this.uploadImage();
-      if (!imageId) {
-        imageId = null
-      }
+      
       // Set the article data with the image ID
       const articleData = {
         title: this.title,
         imageid: imageId,
+        videourl: this.videoURL,
         content: this.content
       };
   
