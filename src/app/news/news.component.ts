@@ -58,6 +58,7 @@ export class NewsComponent implements OnInit {
             return article;
           })
         );
+        this.articleArray.sort((a, b) => b.ID - a.ID);
       },
       error: (error) => {
         console.error('Error occurred:', error);
