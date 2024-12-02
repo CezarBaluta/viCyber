@@ -83,9 +83,10 @@ export class AdminComponent implements OnInit {
       this.apiService.apiKey = this.passwordPost;
   
       // Upload the image and wait for the image ID
-      const imageId = await this.uploadImage();
-      if (!imageId) throw new Error("Image upload failed or no image selected");
-  
+      let imageId = await this.uploadImage();
+      if (!imageId) {
+        imageId = null
+      }
       // Set the article data with the image ID
       const articleData = {
         title: this.title,
@@ -154,14 +155,29 @@ export class AdminComponent implements OnInit {
                                 });
                             },
                             error: (error) => {
-                                console.error('Error deleting image:', error);
+                                console.error('Error finding image:', error);
                                 // If image deletion fails, do not proceed with article deletion
                                 this.submitCooldown = false;
                             }
                         });
                     } else {
-                        console.error('No image found for the article');
-                        this.submitCooldown = false;
+                        console.log("Article had no image.")
+                        // Step 3: Now delete the article
+                        this.apiService.deleteArticle('article', this.id).subscribe({
+                          next: (articleResponse) => {
+                              console.log('Article deleted: ', articleResponse);
+                              // Clear the ID and password after success
+                              this.id = '';
+                              this.passwordDelete = '';
+                          },
+                          error: (error) => {
+                              console.error('Error deleting article:', error);
+                          },
+                          complete: () => {
+                              // Reset cooldown here after both delete actions
+                              this.submitCooldown = false;
+                          }
+                      });
                     }
                 } else {
                     console.error('Article with ID not found');
