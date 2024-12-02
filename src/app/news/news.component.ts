@@ -40,6 +40,7 @@ export class NewsComponent implements OnInit {
             }
             article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
             article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
+            article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
             return article;
           })
         );
