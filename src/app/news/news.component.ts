@@ -44,16 +44,14 @@ export class NewsComponent implements OnInit {
               article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
 
               if(article.videowidth != 0){
-                article.videoMarginLeft = (100 - article.videoMarginLeft) / 2
+                article.videoMarginLeft = (100 - article.videowidth) / 2
                 console.log(article.videoMarginLeft)
               } else {
                 article.videowidth = 80
                 article.videoMarginLeft = 10
               }
 
-              // x / [absolute videowidth] = 16 / 9
-              article.videoHeight = 16 * (article.videowidth - 2 * (10 + article.videoMarginLeft)) / 9
-              console.log(article.videowidth, article.videoHeight)
+              article.videoHeight = article.videowidth
             } else {
               delete article.VideoURL; // Remove VideoURL if empty
             }
