@@ -1,32 +1,36 @@
-<form (ngSubmit)="submitPost()" class="form">
-    <h1 class="form-title">Post an article</h1>
-    <h2 class="form-attribute">Title</h2>
-    <textarea class="form-textarea" rows="1" [(ngModel)]="title" name="title" required></textarea>
+<form (ngSubmit)="submitPost()" class="text-white text-center bg-black md:ml-[25vw] md:mr-[25vw] mt-[5vh] rounded-2xl">
+    <h1>Post an article</h1>
+    <h2>Title</h2>
+    <textarea class="bg-white w-[20vw] text-black" rows="1" [(ngModel)]="title" name="title" required></textarea>
     
-    <h2 class="form-attribute">Image</h2>
+    <h2>Image</h2>
     <input style="display: none;" id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*"/>
-    <label for="fileInput" class="input">Upload Image</label>
+    <label for="fileInput" class="bg-green-500 w-[10vw]">
+        <p class="text-black">
+            Upload Image
+        </p>
+    </label>
     <img [style.width.%]="imageWidth" *ngIf="imagePreview" [src]="imagePreview" alt="Image preview" />
-    <h2 class="form-attribute">Image Width</h2>
-    <input class="imgWidthSlider" type="range" min="0" max="100" name="imageWidth" [(ngModel)]="imageWidth" />
+    <h2>Image Width</h2>
+    <input type="range" min="0" max="100" name="imageWidth" [(ngModel)]="imageWidth" />
 
-    <h2 class="form-attribute">Video</h2>
-    <textarea class="form-textarea" rows="1" [(ngModel)]="videoURL" name="videoURL"></textarea>
-    <h2 class="form-attribute">Video Width</h2>
-    <input class="imgWidthSlider" type="range" min="0" max="100" name="videoWidth" [(ngModel)]="videoWidth" />
+    <h2>Video URL</h2>
+    <textarea class="bg-white w-[20vw] text-black" rows="1" [(ngModel)]="videoURL" name="videoURL"></textarea>
+    <h2>Video Width</h2>
+    <input type="range" min="0" max="100" name="videoWidth" [(ngModel)]="videoWidth" />
     
-    <h2 class="form-attribute">Content</h2>
-    <textarea class="form-textarea" rows="7" [(ngModel)]="content" name="content" required></textarea>
-    <h2 class="form-attribute">ViCyber admin password</h2>
-    <textarea class="form-textarea" rows="1" [(ngModel)]="passwordPost" name="password" required></textarea>
-    <button class="form-submit" (click)="submitPost()">Submit</button>
+    <h2>Content</h2>
+    <textarea class="bg-white w-[20vw] text-black h-[30vh]" rows="7" [(ngModel)]="content" name="content" required></textarea>
+    <h2>ViCyber admin password</h2>
+    <textarea class="bg-white w-[20vw] text-black" rows="1" [(ngModel)]="passwordPost" name="password" required></textarea> <br>
+    <button class="bg-green-500 text-black w-[10vw]" (click)="submitPost()">Submit</button>
 </form>
 
-<form (ngSubmit)="submitDelete()" class="form">
-    <h1 class="form-title">Delete an article</h1>
-    <h2 class="form-attribute">Id</h2>
-    <textarea class="form-textarea" rows="1" [(ngModel)]="id" name="id" required></textarea>
-    <h2 class="form-attribute">ViCyber admin password</h2>
-    <textarea class="form-textarea" rows="1" [(ngModel)]="passwordDelete" name="password" required></textarea>
-    <button class="form-submit" (click)="submitDelete()">Submit</button>
+<form (ngSubmit)="submitDelete()" class="text-white text-center bg-black md:ml-[25vw] md:mr-[25vw] mt-[5vh] rounded-2xl mb-[10vh]">
+    <h1>Delete an article</h1>
+    <h2>Id</h2>
+    <textarea class="bg-white w-[20vw] text-black" rows="1" [(ngModel)]="id" name="id" required></textarea>
+    <h2>ViCyber admin password</h2>
+    <textarea class="bg-white w-[20vw] text-black" rows="1" [(ngModel)]="passwordDelete" name="password" required></textarea> <br>
+    <button class="bg-green-500 text-black w-[10vw]" (click)="submitDelete()">Submit</button>
 </form>
