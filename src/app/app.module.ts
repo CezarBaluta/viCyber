@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { Routes , RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
 
@@ -22,25 +22,18 @@ const appRoutes: Routes = [
   {path:'admin', component:AdminComponent}
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeContentComponent,
-    FooterComponent,
-    ContactContentComponent,
-    HistoryComponent,
-    SponsoriComponent,
-    NewsComponent,
-    AdminComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeContentComponent,
+        FooterComponent,
+        ContactContentComponent,
+        HistoryComponent,
+        SponsoriComponent,
+        NewsComponent,
+        AdminComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
