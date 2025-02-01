@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 // import $ from 'jquery';
 
 @Component({
-  selector: 'app-home-content',
-  templateUrl: './home-content.component.html',
-  styleUrls: ['./home-content.component.css']
+    selector: 'app-home-content',
+    templateUrl: './home-content.component.html',
+    styleUrls: ['./home-content.component.css'],
+    standalone: false
 })
 export class HomeContentComponent implements OnInit {
 

@@ -4,10 +4,11 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-news',
+    templateUrl: './news.component.html',
+    styleUrls: ['./news.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NewsComponent implements OnInit {
   articleArray: Array<any> = [];
