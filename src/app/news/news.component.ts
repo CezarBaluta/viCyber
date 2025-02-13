@@ -24,7 +24,6 @@ export class NewsComponent implements OnInit {
         this.articleArray = await Promise.all(
           data.map(async (article: any) => {
             if(this.tags == 'any' || this.tags == article.Tags) {
-              console.log(this.tags, article.Tags)
               // If ImageID exists, fetch the image base64 data
               if (article.ImageID) {
                 try {
