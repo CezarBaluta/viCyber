@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
 
 @Component({
     selector: 'app-news',
@@ -11,6 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     standalone: false
 })
 export class NewsComponent implements OnInit {
+
+  @Input() tags: string = 'any'
+
   articleArray: Array<any> = [];
 
   constructor(private apiService: ApiService, private sanitizer: DomSanitizer) { }
@@ -21,42 +23,45 @@ export class NewsComponent implements OnInit {
         // Fetch each article and its image (base64 encoded)
         this.articleArray = await Promise.all(
           data.map(async (article: any) => {
-            // If ImageID exists, fetch the image base64 data
-            if (article.ImageID) {
-              try {
-                const imageResponse = await this.apiService.getImage(`image/${article.ImageID}`).toPromise();
-                // Assign the base64 image data directly
-                article.imageUrl = `data:image/jpeg;base64,${imageResponse.data}`; // or the correct mime type
-
-                article.imageWidth = 80
-                article.marginLeft = 10
-                if(imageResponse.width != 0){
-                  article.imageWidth = imageResponse.width
-                  article.marginLeft = (100 - imageResponse.width) / 2
-                  console.log(article.marginLeft)
+            if(this.tags == 'any' || this.tags == article.Tags) {
+              console.log(this.tags, article.Tags)
+              // If ImageID exists, fetch the image base64 data
+              if (article.ImageID) {
+                try {
+                  const imageResponse = await this.apiService.getImage(`image/${article.ImageID}`).toPromise();
+                  // Assign the base64 image data directly
+                  article.imageUrl = `data:image/jpeg;base64,${imageResponse.data}`; // or the correct mime type
+  
+                  article.imageWidth = 80
+                  article.marginLeft = 10
+                  if(imageResponse.width != 0){
+                    article.imageWidth = imageResponse.width
+                    article.marginLeft = (100 - imageResponse.width) / 2
+                    console.log(article.marginLeft)
+                  }
+                } catch (error) {
+                  console.error('Error loading image:', error);
                 }
-              } catch (error) {
-                console.error('Error loading image:', error);
               }
-            }
-            article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
-            article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
-            if (article.VideoURL) {
-              article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
-
-              if(article.videowidth != 0){
-                article.videoMarginLeft = (100 - article.videowidth) / 2
-                console.log(article.videoMarginLeft)
+              article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
+              article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
+              if (article.VideoURL) {
+                article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
+  
+                if(article.videowidth != 0){
+                  article.videoMarginLeft = (100 - article.videowidth) / 2
+                  console.log(article.videoMarginLeft)
+                } else {
+                  article.videowidth = 80
+                  article.videoMarginLeft = 10
+                }
+  
+                article.videoHeight = article.videowidth
               } else {
-                article.videowidth = 80
-                article.videoMarginLeft = 10
+                delete article.VideoURL; // Remove VideoURL if empty
               }
-
-              article.videoHeight = article.videowidth
-            } else {
-              delete article.VideoURL; // Remove VideoURL if empty
+              return article;
             }
-            return article;
           })
         );
         this.articleArray.sort((a, b) => b.ID - a.ID);

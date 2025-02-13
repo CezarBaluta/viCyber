@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-// import $ from 'jquery';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-home-content',
@@ -7,33 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./home-content.component.css'],
     standalone: false
 })
-export class HomeContentComponent implements OnInit {
-
+export class HomeContentComponent {
   constructor() { }
-
   
-  ngOnInit(): void {
-    // $('#recipeCarousel').carousel({
-    //   interval: 10000
-    // })
-    
-    // $('.carousel .carousel-item').each(function(){
-    //     var minPerSlide = 3;
-    //     var next = $(this).next();
-    //     if (!next.length) {
-    //     next = $(this).siblings(':first');
-    //     }
-    //     next.children(':first-child').clone().appendTo($(this));
-        
-    //     for (var i=0;i<minPerSlide;i++) {
-    //         next=next.next();
-    //         if (!next.length) {
-    //           next = $(this).siblings(':first');
-    //         }
-            
-    //         next.children(':first-child').clone().appendTo($(this));
-    //       }
-    // });
-  }
-
+  tags: string = 'home'
 }
