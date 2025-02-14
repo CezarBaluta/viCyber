@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./navbar.component.css'],
     standalone: false
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   constructor() { }
 
@@ -29,6 +29,21 @@ export class NavbarComponent {
       name: "Contact"
     }
   ]
+
+  menuIsOpen: boolean = false
+  toggleMenu() {
+    this.menuIsOpen = !this.menuIsOpen
+    if(this.menuIsOpen) {
+      this.navbar.dataset.state = ''
+    } else {
+      this.navbar.dataset.state = 'active'
+    }
+  }
+
+  navbar: HTMLElement
+  ngOnInit(): void {
+      this.navbar = document.querySelector('nav')
+  }
 }
 
 
