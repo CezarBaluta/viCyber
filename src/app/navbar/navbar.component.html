@@ -1,14 +1,27 @@
-
-<div class="md:flex block justify-start h-[13vh]">
-  <a class="w-1/6 ml-[1vw] md:block hidden" routerLink="">
-    <img class="w-[10vh] invert" src="assets/images/vicyber.png" alt="">
-  </a>
-  <p class="text-green-500 md:w-1/2 w-full md:text-[3vw] text-[7vw] md:pt-[2vh] pt-[1vh] text-center font-mono">ViCyber</p>
-  <div class="md:w-1/2 w-full md:gap-[3vw] gap-[6vw] md:pt-[4vh] flex justify-center">
-    <a class="text-white md:text-[1.5vw] text-[4vw]"  routerLink=""> Home</a>
-    <a class="text-white md:text-[1.5vw] text-[4vw]"  routerLink="news"> News</a>
-    <a class="text-white md:text-[1.5vw] text-[4vw]"  routerLink="history"> History</a>
-    <a class="text-white md:text-[1.5vw] text-[4vw]"  routerLink="sponsori"> Sponsors</a>
-    <a class="text-white md:text-[1.5vw] text-[4vw]"  routerLink="contact"> Contact</a>
+<nav id="nav" class="group z-10 w-full border-b dark:border-white/5 lg:border-transparent">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
+      <div class="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
+        <a href="/" aria-label="logo" class="flex items-center space-x-2">
+          <img src="assets/images/vicyber.png" class="w-[3vw] invert">
+        </a>
+        
+        <div class="relative flex max-h-10 items-center lg:hidden">
+          <button aria-label="humburger" id="hamburger" class="relative -mr-6 p-6 active:scale-95 duration-300">
+            <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-top group-data-[state=active]:rotate-45 group-data-[state=active]:translate-y-1.5"></div>
+            <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-bottom group-data-[state=active]:-rotate-45 group-data-[state=active]:-translate-y-1"></div>
+          </button>
+        </div>
+      </div>
+      <div id="navLayer" aria-hidden="true" class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 group-data-[state=active]:origin-top group-data-[state=active]:scale-y-100 dark:bg-gray-950/70 lg:hidden"></div>
+      <div id="navlinks" class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-fit lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent group-data-[state=active]:visible group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 lg:group-data-[state=active]:translate-y-0">
+        <div class="w-full text-gray-600 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
+          <div id="links-group" class="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-xl">
+            <a *ngFor="let link of links" [routerLink]="link.url" class="hover:text-primary block transition dark:hover:text-white md:px-4 text-white">
+              <span style="visibility: visible;">{{ link.name }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>

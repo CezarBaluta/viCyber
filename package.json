@@ -18,7 +18,7 @@
     "@angular/platform-browser": "^19.1.4",
     "@angular/platform-browser-dynamic": "^19.1.4",
     "@angular/router": "^19.1.4",
-    "@nx/angular": "17.0.6",
+    "@nx/angular": "^20.4.4",
     "@tailwindcss/postcss": "^4.0.3",
     "bootstrap": "^4.6.2",
     "font-awesome": "^4.7.0",
@@ -26,7 +26,7 @@
     "postcss": "^8.5.1",
     "rxjs": "~7.5.0",
     "save": "^2.9.0",
-    "tailwindcss": "^4.0.3",
+    "tailwindcss": "^4.0.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -34,7 +34,7 @@
     "@angular-devkit/build-angular": "^19.1.5",
     "@angular/cli": "~19.1.5",
     "@angular/compiler-cli": "^19.1.4",
-    "@nx/workspace": "17.0.6",
+    "@nx/workspace": "^20.4.4",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
@@ -42,7 +42,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "nx": "17.0.6",
+    "nx": "^20.4.4",
     "typescript": "~5.7.3"
   }
 }

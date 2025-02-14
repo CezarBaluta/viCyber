@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -6,22 +6,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./app.component.css'],
     standalone: false
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'viCyber';
   
-  constructor(){}
+  constructor() {}
 
-  ngOnInit(){
-    // this.getNewsFromAPI();
-  }
-
-  // getNewsFromAPI(){
-  //   this.service.getNews().subscribe((response)=>{
-  //     console.log(response);
-      
-  //   },(error) =>{
-  //     console.log(error);
-  //     }
-  //   );
-  // }
+  ngOnInit() {}
 }
