@@ -28,10 +28,10 @@ export class NavbarComponent implements OnInit {
       url: "/sponsori",
       name: "Sponsors"
     },
-    {
-      url: "/contact",
-      name: "Contact"
-    }
+    // {
+    //   url: "/contact",
+    //   name: "Contact"
+    // }
   ]
 
   menuIsOpen: boolean = false
