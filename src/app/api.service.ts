@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   public apiKey = ''
-  // private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
-  private apiUrl = 'http://localhost:8080'
+  private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
+  // private apiUrl = 'http://localhost:8080'
 
   constructor(private http: HttpClient) { }
 
