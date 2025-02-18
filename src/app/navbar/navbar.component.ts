@@ -13,6 +13,10 @@ export class NavbarComponent implements OnInit {
 
   links = [
     {
+      url: "/",
+      name: "Home"
+    },
+    {
       url: "/news",
       name: "News"
     },
