@@ -13,61 +13,47 @@ export class NewsComponent implements OnInit {
 
   @Input() tags: string = 'any'
 
-  articleArray: Array<any> = [];
-
   constructor(private apiService: ApiService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.apiService.getArticle('article').subscribe({
-      next: async (data) => {
-        // Fetch each article and its image (base64 encoded)
-        this.articleArray = await Promise.all(
-          data.map(async (article: any) => {
-            if(this.tags == 'any' || this.tags == article.Tags) {
-              // If ImageID exists, fetch the image base64 data
-              if (article.ImageID) {
-                try {
-                  const imageResponse = await this.apiService.getImage(`image/${article.ImageID}`).toPromise();
-                  // Assign the base64 image data directly
-                  article.imageUrl = `data:image/jpeg;base64,${imageResponse.data}`; // or the correct mime type
-  
-                  article.imageWidth = 80
-                  article.marginLeft = 10
-                  if(imageResponse.width != 0){
-                    article.imageWidth = imageResponse.width
-                    article.marginLeft = (100 - imageResponse.width) / 2
-                    console.log(article.marginLeft)
-                  }
-                } catch (error) {
-                  console.error('Error loading image:', error);
-                }
-              }
-              article.Title = this.sanitizer.bypassSecurityTrustHtml(article.Title);
-              article.Content = this.sanitizer.bypassSecurityTrustHtml(article.Content);
-              if (article.VideoURL) {
-                article.VideoURL = this.sanitizer.bypassSecurityTrustResourceUrl(article.VideoURL);
-  
-                if(article.videowidth != 0){
-                  article.videoMarginLeft = (100 - article.videowidth) / 2
-                  console.log(article.videoMarginLeft)
-                } else {
-                  article.videowidth = 80
-                  article.videoMarginLeft = 10
-                }
-  
-                article.videoHeight = article.videowidth
-              } else {
-                delete article.VideoURL; // Remove VideoURL if empty
-              }
-              return article;
-            }
-          })
-        );
-        this.articleArray.sort((a, b) => b.ID - a.ID);
+    this.apiService.getArticle(this.tags).subscribe({
+      next: (message) => {
+        console.log(message)
+        const parent = document.querySelector('#parent')
+        for(let article of message) {
+          const div = this.createBox()
+          div.innerHTML = article.HTML
+          const id = document.createElement('p')
+          id.innerHTML = 'ID: ' + article.ID
+          div.appendChild(id)
+          parent.appendChild(div)
+        }
+        this.applyStyles(parent)
       },
-      error: (error) => {
-        console.error('Error occurred:', error);
+      error: (err) => {
+        console.error(err)
       }
-    });
+    })
+  }
+
+  applyStyles(parent) {
+    const headers = parent.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    headers.forEach((title) => {
+      title.classList.add('text-white', 'text-center')
+    })
+    const paragraphs = parent.querySelectorAll('p')
+    paragraphs.forEach((p) => {
+      p.classList.add('text-gray-300')
+    })
+    const imgs = parent.querySelectorAll('img')
+    imgs.forEach((img) => {
+      img.classList.add('mx-auto')
+    })
+  }
+
+  createBox(): HTMLDivElement {
+    const div = document.createElement('div')
+    div.classList.add('bg-gray-900', 'rounded-2xl', 'p-[20px]', 'mb-[3vh]', 'border-1', 'border-gray-300')
+    return div
   }
 }

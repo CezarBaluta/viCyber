@@ -7,45 +7,24 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   public apiKey = ''
-  private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
-  // private apiUrl = 'http://localhost:8080'
+  // private apiUrl = 'https://vicyberapi-806288902557.europe-west3.run.app'
+  private apiUrl = 'http://localhost:8080'
 
   constructor(private http: HttpClient) { }
-  
-  private getHeadersRead(): HttpHeaders {
-    return new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-  }
 
   private getHeadersWrite(): HttpHeaders {
-    return new HttpHeaders({
-      'Authorization': this.apiKey,
-      'Content-Type': 'application/json'
-    });
+    return 
   }
 
-  getArticle(endpoint: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${endpoint}`, { headers: this.getHeadersRead() })
+  getArticle(tags: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/article/${tags}`)
   }
 
-  postArticle(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${endpoint}`, data, { headers: this.getHeadersWrite() });
+  postArticle(data: FormData): Observable<any> {
+    return this.http.post(`${this.apiUrl}/article`, data, { headers: new HttpHeaders({ 'Authorization': this.apiKey }) })
   }
 
-  deleteArticle(endpoint: string, id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${endpoint}/${id}`, { headers: this.getHeadersWrite() })
-  }
-
-  getImage(endpoint: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${endpoint}`, { headers: this.getHeadersRead() })
-  }
-
-  postImage(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${endpoint}`, data, { headers: this.getHeadersWrite() });
-  }
-
-  deleteImage(endpoint: string, id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${endpoint}/${id}`, { headers: this.getHeadersWrite() })
+  deleteArticle(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/article/${id}`, { headers: new HttpHeaders({ 'Authorization': this.apiKey }) })
   }
 }

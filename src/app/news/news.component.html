@@ -1,11 +1,1 @@
-<div id="root-article-div" class="mt-[5vh]">
-    <div *ngFor="let article of articleArray" class="md:w-[45vw] md:ml-[27.5vw] bg-gray-900 rounded-4xl border-1 border-gray-100">
-        <img *ngIf="article.imageUrl" [src]="article.imageUrl" [style.width.%]="article.imageWidth" [style.margin-left.%]="article.marginLeft" class="rounded-4xl mt-[4vh]"/>
-        <p class="md:text-[3vw] text-[9vw] text-center text-white" [innerHTML]="article.Title"></p>
-        <!-- <iframe *ngIf="article.VideoURL" [src]="article.VideoURL" [style.width.%]="article.videowidth" [style.margin-left.%]="article.videoMarginLeft" [style.height.vh]="article.videoHeight"></iframe> -->
-        <div class="ml-[2vw] mr-[2vw]">
-            <p class="text-gray-300 md:text-[0.8vw] text-justify" [innerHTML]="article.Content"></p>
-            <p class="text-gray-500 md:text-[0.8vw]">id: {{ article.ID }}</p>
-        </div>
-    </div>
-</div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 text-center mt-[5vh]" id="parent"></div>

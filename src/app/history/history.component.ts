@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-history',
@@ -6,11 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./history.component.css'],
     standalone: false
 })
-export class HistoryComponent implements OnInit {
-
+export class HistoryComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  tags: string = 'history'
 }
