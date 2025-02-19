@@ -15,7 +15,6 @@ import { NewsComponent } from './news/news.component';
 import { AdminComponent } from './admin/admin.component';
 const appRoutes: Routes = [
   {path:'', component:HomeContentComponent},
-  {path:'contact', component:ContactContentComponent},
   {path:'history', component:HistoryComponent},
   {path:'sponsori', component:SponsoriComponent},
   {path:'news', component:NewsComponent},

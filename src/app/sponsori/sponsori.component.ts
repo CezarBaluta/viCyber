@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SponsorsService } from '../sponsors.service';
 
 @Component({
     selector: 'app-sponsori',
@@ -7,5 +8,7 @@ import { Component, OnInit } from '@angular/core';
     standalone: false
 })
 export class SponsoriComponent {
+  constructor(public sponsorsService: SponsorsService) {}
+  
   tags: string = 'sponsor'
 }
