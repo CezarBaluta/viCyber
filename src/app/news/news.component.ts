@@ -87,7 +87,10 @@ export class NewsComponent implements OnInit {
       // put the remaining elements into the divs
       left.appendChild(article.div.querySelector('img'))
       const h1 = article.div.querySelector('h1')
-      const p = article.div.querySelectorAll('p')[1]
+      let p = article.div.querySelectorAll('p')[0]
+      if(p.innerText == "") { // fix bug where the p that has the image in it is displayed instead of the text p
+        p = article.div.querySelectorAll('p')[1]
+      } 
       if(window.innerWidth > 768) {
         p.innerHTML = p.innerHTML.substring(0, 1000)
         right.appendChild(h1)
